@@ -1,0 +1,32 @@
+#include<iostream>
+#include<algorithm>
+#include<vector>
+#define MAX 100
+using namespace std;
+
+int main()
+{
+	int N, M;//Çà°ú ¿­
+	int arr[MAX][MAX] = {0};
+	cin >> N >> M;
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+		{
+			cin >> arr[i][j];
+		}
+	}
+	vector<int> small;
+	int min_num = 10000;
+	int max_num = 0;
+	for (int j = 0; j < M; j++)
+	{
+		for (int i = 0; i < N; i++)
+		{
+			min_num=min(min_num, arr[i][j]);
+		}
+		max_num = max(max_num, min_num);
+	}
+	cout << max_num;
+	return 0;
+}
