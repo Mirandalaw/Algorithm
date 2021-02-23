@@ -2,7 +2,6 @@
 
 #include<iostream>
 #include<algorithm>
-#include<vector>
 #define MAX 100
 using namespace std;
 
@@ -18,7 +17,6 @@ int main()
 			cin >> arr[i][j];
 		}
 	}
-	vector<int> small;
 	int min_num = 10000;
 	int max_num = 0;
 	for (int j = 0; j < M; j++)
