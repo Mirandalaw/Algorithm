@@ -1,0 +1,40 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+
+int solve(const string &A, const string &B)
+{//A = banana, B = bana
+
+	int cnt = 0;
+
+	for (int i = 1; i <= A.size(); i++)
+	{
+		if (B == A.substr(i - 1, B.size()))
+		{
+			cnt++;
+			i += B.size()-1;//1+4=5
+		}
+		else
+		{
+			cnt++;
+		}
+	}
+	return cnt;
+}
+
+
+int main()
+{
+	int Test_case, tc;
+	string word, word_macro;
+	cin >> Test_case;
+	for (tc = 1; tc <= Test_case; tc++)
+	{
+		cin >> word >> word_macro;
+		int answer = solve(word, word_macro);
+		cout << "#"<<tc<<" "<<answer<<endl;
+	}
+	return 0;
+}

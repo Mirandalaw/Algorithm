@@ -1,0 +1,47 @@
+#include<iostream>
+#include<set>
+#include<string>
+using namespace std;
+
+int st1 = 1;
+
+
+int main()
+{
+	int the_number, Test_case;
+
+	cin >> Test_case;//테스트 케이스 입력
+	while (Test_case--)
+	{
+		set<string> dic;//set의 라이브러리에 저장 하기위한 변수
+		set<string>::iterator iter;//set을 읽기위한 변수
+		string str1;//입력받을 문자열
+		cin >> the_number;//탐색을 통해 가져오고 싶은 인덱스
+		cin >> str1;//문자열 입력
+		int cnt = 0;//탐색을 통해 가져오고 싶은 인덱스를 구별하기위한 변수
+		for (int i = 0; i < str1.size(); i++)
+		{
+			for (int j = i; j < str1.size(); j++)
+			{
+				dic.insert(str1.substr(i, j - i + 1));//\0으로 끝나는 문자열을 나타내주기 위해 +1
+			}
+		}
+		if (the_number > dic.size()) cout << "#" << st1 << " none" << endl;
+		else
+		{
+			for (iter = dic.begin(); iter != dic.end(); iter++)
+			{
+				cnt++;
+				if (cnt == the_number)//탐색에 필요한 인덱스 도출을 위한 if문
+				{
+					cout << "#" << st1 << " ";
+					cout << *iter << endl;
+				}
+			}
+		}
+		if (!str1.empty()) str1.clear();//한번 사용한 변수를 재사용하기 위해 비워주기
+		if (!dic.empty()) dic.clear();//""
+		st1++;//해당 test_case를 나타내기 위한 변수
+	}
+	return 0;
+}

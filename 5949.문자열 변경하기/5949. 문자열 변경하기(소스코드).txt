@@ -1,0 +1,33 @@
+#include<iostream>
+#include<string>
+#include<vector>
+
+using namespace std;
+
+int main()
+{
+	int Test_case, tc;
+	cin >> Test_case;
+	for (tc = 1; tc <= Test_case; tc++)
+	{
+		string S, T;
+		vector<int>Svec, Tvec;
+		long long cnt = 0;
+		cin >> S >> T;
+		for (int i = 0; i < S.size(); i++)
+		{
+			//문자열 S에서의 b의 index를 저장
+			if (S[i] == 'b') Svec.push_back(i);
+			//문자열 T에서의 b의 index를 저장
+			if (T[i] == 'b') Tvec.push_back(i);
+		}
+		//두개의 문자열의 길이 동일,a,b의 개수 동일하기 때문에 vector의 사이즈 또한 동일
+		for (int j = 0; j < Svec.size(); j++)
+		{
+			cnt += abs(Svec[j] - Tvec[j]);
+			//각 Svec,Tvec의 value(각각의 index 값)을 빼주고 절대값처리
+		}
+		cout << "#" << tc << " " << cnt << endl;
+	}
+	return 0;
+}
