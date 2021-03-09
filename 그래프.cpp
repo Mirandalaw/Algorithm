@@ -12,7 +12,7 @@ vector<int> dfs_st;
 vector<int> bfs_st;
 int main()
 {
-	int n, m,v;//Á¤Á¡ÀÇ ¼ö¿Í °£¼±ÀÇ ¼ö¿Í Á¤Á¡ÀÇ ¹øÈ£
+	int n, m,v;//ì •ì ì˜ ìˆ˜ì™€ ê°„ì„ ì˜ ìˆ˜ì™€ ì •ì ì˜ ë²ˆí˜¸
 	int graph[MAX][MAX];
 	int visited[MAX];
 	cin >> n >> m >> v;
@@ -27,12 +27,13 @@ int main()
 		count++;
 	}
 	print(graph, n);
-	//dfs(visited, graph, v, n);
+	dfs(visited, graph, v, n);
+	init_visited(visited, n);
 	bfs(visited, graph, v, n);
-	/*for (int i = 0; i < dfs_st.size(); i++)
+	for (int i = 0; i < dfs_st.size(); i++)
 	{
 		printf("%d", dfs_st[i]);
-	}*/
+	}
 	printf("\n");
 	for (int i = 0; i < bfs_st.size(); i++)
 	{
@@ -50,7 +51,7 @@ void init(int graph[MAX][MAX],int n)
 		}
 	}
 }
-void init_visited(int visited[MAX], int n)//1ÀÌ¸é ¹æ¹®ÇÏÁö ¾Ê¾ÒÀ½À¸·Î ÃÊ±âÈ­ ÇØÁÜ
+void init_visited(int visited[MAX], int n)//1ì´ë©´ ë°©ë¬¸í•˜ì§€ ì•Šì•˜ìŒìœ¼ë¡œ ì´ˆê¸°í™” í•´ì¤Œ
 {
 	for (int row = 1; row <= n; row++)
 	{
@@ -87,18 +88,21 @@ void bfs(int visited[MAX],int graph[MAX][MAX],int v,int n)
 {
 	queue<int> bfs_start;
 	int start_vertex = v;
-	visited[start_vertex] = 1;
 	bfs_start.push(start_vertex);
+	visited[start_vertex] = 1;
+
 	while (!bfs_start.empty())
 	{
+		int current = bfs_start.front();
 		bfs_start.pop();
-		bfs_st.push_back(bfs_start.front());
+		bfs_st.push_back(current);
+
 		for (int i = 1; i <= n; i++)
 		{
-			if (graph[start_vertex][i] == 1 && visited[i] != 1)
+			if (graph[current][i] == 1 && visited[i] != 1)
 			{
 				bfs_start.push(i);
-				visited[start_vertex] = 1;
+				visited[i] = 1;
 			}
 		}
 	}
