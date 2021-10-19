@@ -1,0 +1,80 @@
+#include<iostream>
+#include<queue>
+#define MAX 101
+using namespace std;
+
+int N;
+int region[MAX][MAX];
+int map[MAX][MAX];
+int visited[MAX][MAX];
+int safeArea[MAX] = { 0 };
+int direct_x[4] = { 0,1,0,-1 };
+int direct_y[4] = { -1,0,1,0 };
+
+void bfs(int start_x, int start_y) {
+	queue<pair<int, int>>q;
+	q.push(make_pair(start_x, start_y));
+	visited[start_y][start_x] = 1;
+	while (!q.empty()) {
+		int x = q.front().first;
+		int y = q.front().second;
+		q.pop();
+		for (int dir = 0; dir < 4; ++dir) {
+			int nx = x + direct_x[dir];
+			int ny = y + direct_y[dir];
+			if (nx >= 0 && nx < N&&ny >= 0 && ny < N&&visited[ny][nx] == 0&&map[ny][nx]==0) {
+				q.push(make_pair(nx, ny));
+				visited[ny][nx] = 1;
+			}
+		}
+	}
+}
+void init() {
+	for (int col = 0; col < N; ++col) {
+		for (int row = 0; row < N; ++row) {
+			map[col][row] = 0;
+			visited[col][row] = 0;
+		}
+	}
+}
+int main() {
+	cin >> N;
+	int maxValue = -1;
+	for (int col = 0; col < N; ++col) {
+		for (int row = 0; row < N; ++row) {
+			cin >> region[col][row];
+			if (maxValue < region[col][row])maxValue = region[col][row];
+		}
+	}
+	for (int h = 1; h <= maxValue; ++h) {
+		init();
+		for (int col = 0; col < N; ++col) {
+			for (int row = 0; row < N; ++row) {
+				if (region[col][row] < h)
+				{
+					map[col][row] = 1;//잠겼다.
+					visited[col][row] = 1;
+				}
+				else {
+					map[col][row] = 0;
+					visited[col][row] = 0;
+				}
+			}
+		}
+		for (int col = 0; col < N; ++col) {
+			for (int row = 0; row < N; ++row) {
+				if (visited[col][row] == 0&&map[col][row]==0) {
+					bfs(row, col);
+					safeArea[h]++;
+				}
+			}
+		}
+	}
+	int maxIdex = -1;
+	for (int h = 1; h <= maxValue; ++h) {
+		if (maxIdex < safeArea[h])maxIdex = safeArea[h];
+	}
+	cout << maxIdex;
+	return 0;
+
+}
