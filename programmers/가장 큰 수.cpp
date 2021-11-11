@@ -15,7 +15,7 @@ string solution(vector<int> numbers) {
         tmp.push_back(to_string(numbers[i]));
     }
     sort(tmp.begin(),tmp.end(),cmp);
-    if(tmp[0]=="0")return "0";
+    if(tmp[0]=="0")return "0"; //첫번째 숫자가 0이면 return 0;
     for(int i=0;i<tmp.size();++i){
         answer+=tmp[i];
     }
