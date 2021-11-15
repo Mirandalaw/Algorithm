@@ -37,11 +37,11 @@ string solution(string m, vector<string> musicinfos) {
         
         hour1 = stoi(musicinfos[i].substr(0,2))*60;
         min1 = stoi(musicinfos[i].substr(3,2));
-        hour1 = stoi(musicinfos[i].substr(6,2))*60;
+        hour2 = stoi(musicinfos[i].substr(6,2))*60;
         min2 = stoi(musicinfos[i].substr(9,2));
-        resultTime=(hour1+min1)-(hour2+min2);
+        resultTime=(hour2+min2)-(hour1+min1);
         
-        for(int j=12;musicinfos[i].size();--j){
+        for(int j=12;musicinfos[i].size();++j){
             if(musicinfos[i][j]==',')
             {
                 title = musicinfos[i].substr(12,j-12);
@@ -57,7 +57,7 @@ string solution(string m, vector<string> musicinfos) {
             for(int j=1;j<resultTime/tmp.size();++j){
                 music+=tmp;
             }
-            for(int j=0;j<resultTime/tmp.size();++j){
+            for(int j=0;j<resultTime%tmp.size();++j){
                 music+=tmp[j];
             }
         }
