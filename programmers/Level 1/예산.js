@@ -14,7 +14,7 @@ function solution(d, budget) {
         }
         else return answer;
     }
-}
+} 
 
 
 //다른 사람의 풀이
