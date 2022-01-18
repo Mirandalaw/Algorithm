@@ -17,5 +17,5 @@
 2. Baejoon
 
   -Silver
-  
+   :
   -Gold
