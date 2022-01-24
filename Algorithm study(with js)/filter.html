@@ -5,15 +5,15 @@
   </head>
   <body>
     <script>
-      function filter(predicate, thisArg) {
-        let list = [];
-        for (let i = 0; i < a.length; ++i) {
-          if (predicate(a[i], i)) {
-            list.push(a[i]);
-          }
-        }
-        return list;
-      }
+//       function filter(predicate, thisArg) {
+//         let list = [];
+//         for (let i = 0; i < a.length; ++i) {
+//           if (predicate(a[i], i)) {
+//             list.push(a[i]);
+//           }
+//         }
+//         return list;
+//       }
       a = [10, 11, 12, 13, 13, 14];
       let answer = a.filter((v, i) => {
         if (v % 2 == 0) return v;
