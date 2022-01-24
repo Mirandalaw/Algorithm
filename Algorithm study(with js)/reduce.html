@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //   function reduce(predicate, val) {
+      //     let result = val;
+      //     for (let i = 0; i < a.length; ++i) {
+      //       result = predicate(result, a[i]);
+      //     }
+      //     return result;
+      //   }
+      a = [10, 11, 12, 13, 14, 15];
+      answer = a.reduce((acc, v) => {
+        return acc + v;
+      }, 0);
+      console.log(answer);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //   function map(predicate, thisArg) {
+      //     let list = [];
+      //     for (let i = 0; i < a.length; i++) {
+      //       list.push(predicate(a[i], i));
+      //     }
+      //     return list;
+      //   }
+      a = [10, 11, 12, 13, 14, 15];
+      //   let answer = a.map((v, i) => {
+      //     return v * v;
+      //   });
+      let answer = a.map((v, i) => {
+        if (v % 2 == 0) return v;
+      });
+      console.log(answer);
+    </script>
+  </body>
+</html>
