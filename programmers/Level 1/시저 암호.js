@@ -20,3 +20,10 @@ function solution(s, n) {
     }
     return answer;
 }
+/*
+var val = 111;
+String.fromCharCode(val) -> o
+
+var val = "charCodeAt";
+val.charCodeAt(4) -> 67
+*/
