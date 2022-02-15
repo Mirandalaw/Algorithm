@@ -24,6 +24,6 @@
     :
  
  
-  -Platinum
+  - Platinum
     :
  
