@@ -16,14 +16,17 @@
   
 2. Baejoon
    
+   
   -Silver
    :
+   
    
    
   -Gold
     :
  
- 
-  -Platinum
+
+
+ -Platinum
     :
  
