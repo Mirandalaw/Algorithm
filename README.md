@@ -17,12 +17,12 @@
 2. Baejoon
    
    
-   - Silver
+  - Silver
    :
    
    
    
-   - Gold
+  - Gold
     :
  
 
