@@ -16,7 +16,6 @@
   
 2. Baejoon
    
-   
   - Silver
    :
    
