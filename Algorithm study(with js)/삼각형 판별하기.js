@@ -14,8 +14,8 @@
                if((sum-max)<=max)answer="NO";
                return answer;
            }
-
-            console.log(solution(6,7, 11));
+           console.log(solution(6,7, 11));
+           /*가장 큰 변의 길이가 짧은변의 합보다 작을경우에 삼각형 성립*/
         </script>
     </body>
 </html>
