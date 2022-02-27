@@ -1,7 +1,7 @@
 # Algorithm
 알고리즘 풀이
 1. Programmers
-    - solve with js
+    - solve (with js)
 
   
     - Level.1 
@@ -19,7 +19,7 @@
 2. Baejoon
    
   - Silver
-   :
+   : 
    
    
    
