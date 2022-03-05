@@ -26,8 +26,3 @@
   - Gold
     :
  
-
-
-  -  Platinum
-    :
- 
