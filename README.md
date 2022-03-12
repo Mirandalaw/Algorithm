@@ -21,7 +21,6 @@
   - Silver
    : 
    
-   
   - Gold
     :
     
