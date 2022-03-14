@@ -16,6 +16,18 @@ function solution(d, budget) {
     }
 } 
 
+function solution(d, budget) {
+    d.sort((a,b)=>{return a-b});
+    let result=0;
+    let cnt=0;
+    for (let i=0;i<d.length;++i){
+        result+=d[i];
+        if(result<=budget){
+            cnt++;
+        }
+    }
+    return cnt;
+}
 
 //다른 사람의 풀이
 function solution(d, budget) {
