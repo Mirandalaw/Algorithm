@@ -14,7 +14,6 @@ function solution(id_list, report, k) {
         if(report_list[value].length>=k){
            report_list[value].map((user)=>{
                 arr[id_list.indexOf(user)] += 1
-                console.log(id_list.indexOf(user)); 
            })
         }
     }
