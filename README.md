@@ -20,8 +20,7 @@
    
   - Silver
    : 
-   
-   
+  
    
   - Gold
     :
