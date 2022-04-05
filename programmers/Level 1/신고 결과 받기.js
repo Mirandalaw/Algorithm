@@ -19,3 +19,24 @@ function solution(id_list, report, k) {
     }
     return arr;
 }
+
+function solution(id_list, report, k) {
+    // 새로운 id_list의 길이 만큼의 answer 배열을 0으로 초기화
+    const answer = new Array(id_list.length).fill(0);
+    let userList = [];
+    id_list.map((value)=>{
+        userList[value]= [];
+    })
+    report.map(value=>{
+        const [user_id,report_id]=value.split(' ');
+        if(!userList[report_id].includes(user_id))userList[report_id].push(user_id);
+    })
+    for(const key in userList){
+        if(userList[key].length>=k){
+            userList[key].map(v=>{
+                answer[id_list.indexOf(v)]++;
+            })
+        }
+    }
+    return answer;
+}
