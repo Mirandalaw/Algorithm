@@ -21,10 +21,10 @@
    
   - Silver
    : 
-  
+     
    
   - Gold
-    :
+   : 
     
 
   - Platinum
