@@ -8,6 +8,5 @@ function gcd(w,h){
 }
 function solution(w, h) {
     const gcdVal = gcd(w,h);
-    
     return w * h - (w + h - gcdVal);
 }
