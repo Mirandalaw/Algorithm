@@ -3,7 +3,7 @@
 1. Programmers
 
 
-    - solve (with js)
+    - solve (with  js)
 
     - Level.1 
       https://github.com/Mirandalaw/Algorithm/tree/main/programmers/Level%201
