@@ -17,7 +17,7 @@ function solution(n, lost, reserve) {
     }
     return answer;
 }
-
+// 또 다른 풀이
 function solution(n, lost, reserve) {
     var answer = 0;
     let arr= new Array(n).fill(1);
